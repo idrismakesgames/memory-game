@@ -1,6 +1,9 @@
 # Memory Game (React + Typescript)
 Memory Game (React, Typescript, Redux Toolkit)
 
+### Figma Link
+[Full Figma Design And Technical Details](https://www.figma.com/design/1ajIDGUNbZ6kH3JgDBj0Fh/Memory-Game?node-id=0-1&t=cwOJGSE2bAdZOWp8-1)
+
 ### Task List
 - Create Vite repo
 - Add redux Toolkit and dependencies
