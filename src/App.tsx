@@ -1,25 +1,33 @@
-import { useState } from "react";
 import "./App.css";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "./state/store.ts";
+import {
+  changeName,
+  changeNameAsync,
+  setLoading,
+} from "./state/game/gameSlice.ts";
 
 function App() {
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
+  const gameName = useSelector((state: RootState) => state.game.gameName);
+  const isLoading = useSelector((state: RootState) => state.game.isLoading);
+  const dispatch = useDispatch<AppDispatch>();
 
   return (
-    <>
-      <div></div>
-      <h1>Vite + React</h1>
+    <div className="App">
+      <div className="App-header">{gameName}</div>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+        <button onClick={() => dispatch(setLoading())}>
+          Loading is: {isLoading.toString()}
         </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+        <button onClick={() => dispatch(changeName("Testing Name Change"))}>
+          Change name
+        </button>
+        <button onClick={() => dispatch(changeNameAsync("Change  Name in 1"))}>
+          Async Action Setup
+        </button>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   );
 }
 
