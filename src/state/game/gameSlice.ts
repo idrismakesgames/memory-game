@@ -1,13 +1,24 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 
+interface GameMode {
+  difficultyName: string;
+  gridRows: number;
+  gridColumns: number;
+  colours: string[];
+  timeShownInSeconds: number;
+  patterns: number[][];
+}
+
 interface GameState {
   gameName: string;
   isLoading: boolean;
+  gameModes: GameMode[] | null;
 }
 
 const initialState: GameState = {
   gameName: "Memory Game",
   isLoading: false,
+  gameModes: null,
 };
 
 const gameSlice = createSlice({
