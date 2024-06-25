@@ -1,24 +1,11 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-
-interface GameMode {
-  difficultyName: string;
-  gridRows: number;
-  gridColumns: number;
-  colours: string[];
-  timeShownInSeconds: number;
-  patterns: number[][];
-}
-
-interface GameState {
-  gameName: string;
-  isLoading: boolean;
-  gameModes: GameMode[] | null;
-}
+import { GameState } from "./gameSlice.types.ts";
 
 const initialState: GameState = {
   gameName: "Memory Game",
-  isLoading: false,
+  gameLoading: false,
   gameModes: null,
+  showHelpText: false,
 };
 
 const gameSlice = createSlice({
@@ -28,8 +15,8 @@ const gameSlice = createSlice({
     changeName: (state, action: PayloadAction<string>) => {
       state.gameName = action.payload;
     },
-    setLoading: (state) => {
-      state.isLoading = !state.isLoading;
+    setGameLoading: (state) => {
+      state.gameLoading = !state.gameLoading;
     },
   },
   extraReducers: (builder) => {
@@ -53,6 +40,6 @@ export const changeNameAsync = createAsyncThunk(
   },
 );
 
-export const { changeName, setLoading } = gameSlice.actions;
+export const { changeName, setGameLoading } = gameSlice.actions;
 
 export default gameSlice.reducer;

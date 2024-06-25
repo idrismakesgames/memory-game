@@ -4,20 +4,21 @@ import { AppDispatch, RootState } from "./state/store.ts";
 import {
   changeName,
   changeNameAsync,
-  setLoading,
+  setGameLoading,
 } from "./state/game/gameSlice.ts";
 
 function App() {
   // const [count, setCount] = useState(0);
   const gameName = useSelector((state: RootState) => state.game.gameName);
-  const isLoading = useSelector((state: RootState) => state.game.isLoading);
+  const isLoading = useSelector((state: RootState) => state.game.gameLoading);
   const dispatch = useDispatch<AppDispatch>();
 
   return (
-    <div className="App">
-      <div className="App-header">{gameName}</div>
+    <div className="app">
+      <div className="app-header alegreya-sans-sc-bold">{gameName}</div>
+      <div className="help-text"></div>
       <div className="card">
-        <button onClick={() => dispatch(setLoading())}>
+        <button onClick={() => dispatch(setGameLoading())}>
           Loading is: {isLoading.toString()}
         </button>
         <button onClick={() => dispatch(changeName("Testing Name Change"))}>
