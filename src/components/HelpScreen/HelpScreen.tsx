@@ -20,7 +20,7 @@ function HelpScreen() {
         <HelpImage4 height={"120"} />
       </div>
       <div className={classes.helpLine}>
-        2. Fill in the pattern that matches the colour
+        2. Fill the grid with the pattern that matches the colour
       </div>
       <div className={classes.helpImagesBottom}>
         <HelpImage5 height={"130"} />
