@@ -3,7 +3,7 @@ import classes from "./GameButton.module.css";
 
 function GameButton(props: GameButtonType) {
   return (
-    <div className={classes.gameButton}>
+    <div onClick={props.onClickMethod} className={classes.gameButton}>
       <div className={classes.iconContainer}>
         <props.buttonIcon height={props.height} />
       </div>
