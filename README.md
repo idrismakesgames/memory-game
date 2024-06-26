@@ -13,7 +13,7 @@ Memory Game (React, Typescript, Next.js, Redux Toolkit)
 - ~~Map our data structure of API for game configuration~~
 - Setup Next.js API to store game configuration data 
 - Bring in said data on load of memory game in redux state
-- Implement help screen on first load (store check in localstorage when seen)
+- ~~Implement help screen on first load (store check in localstorage when seen)~~
 - Render medium grid by default
 - Create countdowns based on timing and number of or colours (from config endpoints)
 - Set patterns into place for each of those timing and run
