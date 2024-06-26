@@ -4,5 +4,6 @@ export default interface GameButtonType {
   buttonIcon: React.ElementType;
   buttonText: string;
   onClickMethod: () => void;
+  disabled?: boolean;
   height?: number;
 }

@@ -35,5 +35,13 @@
         filter: drop-shadow(0px 0px 2px var(--color-blue));
         cursor: pointer;
     }
+
+    &.buttonDisabled {
+        opacity: 0.3;
+    }
+
+    .textContainer {
+        text-transform: capitalize;
+    }
 }
 

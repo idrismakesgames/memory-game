@@ -5,7 +5,8 @@ import * as gameSliceActions from "./state/game/gameSlice.ts";
 import "./App.css";
 import LoadingIndicator from "./components/LoadingIndicator/LoadingIndicator.tsx";
 import { GamePlayModes } from "./state/game/gameSlice.types.ts";
-import HelpScreen from "./components/HelpScreen/HelpScreen.tsx";
+import HelpScreen from "./containers/HelpScreen/HelpScreen.tsx";
+import DifficultySelect from "./containers/DifficultySelect/DifficultySelect.tsx";
 
 function App() {
   const gameName = useSelector((state: RootState) => state.game.gameName);
@@ -28,9 +29,7 @@ function App() {
         <LoadingIndicator text={"Loading..."} />
       )}
       {gamePlayMode === GamePlayModes.tutorialShowing && <HelpScreen />}
-      {gamePlayMode === GamePlayModes.difficultySelect && (
-        <div>Select Difficulty</div>
-      )}
+      {gamePlayMode === GamePlayModes.difficultySelect && <DifficultySelect />}
       {gamePlayMode === GamePlayModes.showingPatterns && (
         <>
           <div className="app-header alegreya-sans-sc-bold">{gameName}</div>

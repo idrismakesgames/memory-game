@@ -6,7 +6,7 @@ import HelpImage3 from "../../assets/help3.svg?react";
 import HelpImage4 from "../../assets/help4.svg?react";
 import HelpImage5 from "../../assets/help5.svg?react";
 import OkayIcon from "../../assets/okay.svg?react";
-import GameButton from "../GameButton/GameButton.tsx";
+import GameButton from "../../components/GameButton/GameButton.tsx";
 import classes from "./HelpScreen.module.css";
 
 import * as gameSliceActions from "../../state/game/gameSlice.ts";

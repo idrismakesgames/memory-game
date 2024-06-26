@@ -1,0 +1,61 @@
+.difficultyText {
+    font-size: 26px;
+
+    .difficultyLine {
+        margin-bottom: 30px;
+        @media only screen and (max-width: 700px) {
+            margin-bottom: 20px;
+        }
+    }
+
+    .difficultyImages {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 40px;
+
+        @media only screen and (max-width: 700px) {
+            margin-bottom: 25px;
+        }
+
+        > div {
+            padding-right: 30px;
+
+            &:last-of-type {
+                padding-right: 0;
+            }
+
+            :hover {
+                cursor: pointer;
+            }
+
+            @media only screen and (max-width: 700px) {
+                padding-right: 15px;
+            }
+        }
+
+        .difficultyEasy svg {
+            height: 80px;
+            @media only screen and (max-width: 700px) {
+                height: 55px;
+            }
+        }
+
+        .difficultyMedium svg {
+            height: 120px;
+            @media only screen and (max-width: 700px) {
+                height: 85px;
+            }
+        }
+
+        .difficultyHard svg {
+            height: 150px;
+            @media only screen and (max-width: 700px) {
+                height: 115px;
+            }
+        }
+    }
+}
+
+
+
