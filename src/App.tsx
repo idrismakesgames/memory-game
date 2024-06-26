@@ -1,7 +1,8 @@
 import { useEffect } from "react";
-import { useSelector } from "react-redux";
-import { RootState } from "./state/store.ts";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "./state/store.ts";
 import HelpScreen from "./components/HelpScreen/HelpScreen.tsx";
+import * as gameSliceActions from "./state/game/gameSlice.ts";
 import "./App.css";
 import LoadingIndicator from "./components/LoadingIndicator/LoadingIndicator.tsx";
 
@@ -13,11 +14,14 @@ function App() {
   const showHelpText = useSelector(
     (state: RootState) => state.game.showHelpText,
   );
+  const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
     // dispatch load game mode data. and return true when promise completes.
-    // Change loading state when complete too.
-  }, []);
+    dispatch(gameSliceActions.initLoadGame()).then(() => {
+      console.log("is this working?");
+    });
+  }, [dispatch]);
 
   return (
     <div className="app alegreya-sans-sc-medium">

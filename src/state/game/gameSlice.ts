@@ -12,34 +12,25 @@ const gameSlice = createSlice({
   name: "game",
   initialState,
   reducers: {
-    setGameLoading: (state) => {
-      state.gameLoading = !state.gameLoading;
-    },
     setShowHelpText: (state, action: PayloadAction<boolean>) => {
       state.showHelpText = action.payload;
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(changeNameAsync.pending, () => {
-      console.log("changeNameAsync.pending");
+    builder.addCase(initLoadGame.pending, () => {
+      console.log("Loading Game");
     });
-    builder.addCase(
-      changeNameAsync.fulfilled,
-      (state, action: PayloadAction<string>) => {
-        state.gameName = action.payload;
-      },
-    );
+    builder.addCase(initLoadGame.fulfilled, (state) => {
+      state.gameLoading = false;
+    });
   },
 });
 
-export const changeNameAsync = createAsyncThunk(
-  "game/changeNameAsync",
-  async (newName: string) => {
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    return newName;
-  },
-);
+export const initLoadGame = createAsyncThunk("game/initLoadGame", async () => {
+  await new Promise((resolve) => setTimeout(resolve, 3000));
+  return;
+});
 
-export const { setGameLoading, setShowHelpText } = gameSlice.actions;
+export const { setShowHelpText } = gameSlice.actions;
 
 export default gameSlice.reducer;
