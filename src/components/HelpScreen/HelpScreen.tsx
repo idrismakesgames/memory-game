@@ -14,19 +14,19 @@ function HelpScreen() {
         1. A sequence of coloured patterns will play
       </div>
       <div className={classes.helpImagesTop}>
-        <HelpImage1 height={"120"} />
-        <HelpImage2 height={"120"} />
-        <HelpImage3 height={"120"} />
-        <HelpImage4 height={"120"} />
+        <HelpImage1 />
+        <HelpImage2 />
+        <HelpImage3 />
+        <HelpImage4 />
       </div>
       <div className={classes.helpLine}>
         2. Fill the grid with the pattern that matches the colour
       </div>
       <div className={classes.helpImagesBottom}>
-        <HelpImage5 height={"130"} />
+        <HelpImage5 />
       </div>
 
-      <GameButton buttonIcon={PlayIcon} buttonText={"Play"} height={43} />
+      <GameButton buttonIcon={PlayIcon} buttonText={"Play"} />
     </div>
   );
 }
