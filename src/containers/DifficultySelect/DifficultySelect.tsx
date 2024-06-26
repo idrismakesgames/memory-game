@@ -12,18 +12,6 @@ import classes from "./DifficultySelect.module.css";
 import * as gameSliceActions from "../../state/game/gameSlice.ts";
 import { GamePlayModes } from "../../state/game/gameSlice.types.ts";
 import { useState } from "react";
-import DifficultyButton from "../../components/DifficultyButton/DifficultyButton.tsx";
-
-const difficulties = ["Easy", "Medium", "Hard"];
-const difficultyElements = {
-  easySelectedComponent: EasySelected,
-  easyUnselectedComponent: EasyUnselected,
-  mediumSelectedComponent: MediumSelected,
-  mediumUnselectedComponent: MediumUnselected,
-  hardSelectedComponent: HardSelected,
-  hardUnselectedComponent: HardUnselected,
-};
-console.log(difficultyElements);
 
 function DifficultySelect() {
   const dispatch = useDispatch<AppDispatch>();
@@ -43,35 +31,17 @@ function DifficultySelect() {
     <div className={classes.difficultyText}>
       <div className={classes.difficultyLine}>Select Difficulty</div>
       <div className={classes.difficultyImages}>
-        {difficulties.map((difficulty: string) => (
-          <div
-            className={classes[`difficulty${difficulty}`]}
-            onClick={() => selectDifficulty(difficulty)}
-            onMouseOver={() => setOpen(difficulty)}
-            onMouseOut={mouseOut}
-          >
-            <DifficultyButton
-              difficultyName={difficulty}
-              difficultyElementSelected={EasySelected}
-              difficultyElementUnselected={EasyUnselected}
-              selectedDifficulty={difficultySelected}
-              hoveredDifficulty={open}
-            />
-          </div>
-        ))}
         <div
           className={classes.difficultyEasy}
           onClick={() => selectDifficulty("easy")}
           onMouseOver={() => setOpen("easy")}
           onMouseOut={mouseOut}
         >
-          <DifficultyButton
-            difficultyName={"easy"}
-            difficultyElementSelected={EasySelected}
-            difficultyElementUnselected={EasyUnselected}
-            selectedDifficulty={difficultySelected}
-            hoveredDifficulty={open}
-          />
+          {open === "easy" || difficultySelected === "easy" ? (
+            <EasySelected />
+          ) : (
+            <EasyUnselected />
+          )}
         </div>
         <div
           className={classes.difficultyMedium}
