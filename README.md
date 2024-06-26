@@ -24,3 +24,11 @@ Memory Game (React, Typescript, Next.js, Redux Toolkit)
 - Test all difficulties and extremely config values
 - Make it response for desktop tablet and mobile
 - Get testing feedback for bugs and usability.
+
+### Details
+- Coded using latest react and typescript design principles
+- Dynamic frontend, using endpoints to provide configuration, and patterns.
+- Usage of local storage to keep track of user streak. (reset when retrying)
+- Three separate difficulties to provide greater accessibility.
+- Authored patterns for each difficulty to make them more memorable and provide a more fun user experience.
+- Illustrates just how flexible and useful React and Typescript can be with a unique use case.
