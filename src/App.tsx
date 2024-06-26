@@ -28,7 +28,7 @@ function App() {
           {!showHelpText && <div className="difficulties">Play game soon</div>}
         </>
       )}
-      {isGameLoading && <LoadingIndicator text={""} />}
+      {isGameLoading && <LoadingIndicator text={"Loading..."} />}
     </div>
   );
 }
