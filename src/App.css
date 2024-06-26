@@ -6,5 +6,7 @@
 }
 
 .app-header {
-    font-size: 40px
+    font-size: 50px;
+    color: var(--color-text);
+    margin-bottom: 25px;
 }

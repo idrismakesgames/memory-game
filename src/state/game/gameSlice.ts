@@ -3,9 +3,9 @@ import { GameState } from "./gameSlice.types.ts";
 
 const initialState: GameState = {
   gameName: "Memory Game",
-  gameLoading: false,
+  gameLoading: true,
   gameModes: null,
-  showHelpText: false,
+  showHelpText: true,
 };
 
 const gameSlice = createSlice({
@@ -17,6 +17,9 @@ const gameSlice = createSlice({
     },
     setGameLoading: (state) => {
       state.gameLoading = !state.gameLoading;
+    },
+    setshowHelpText: (state, action: PayloadAction<boolean>) => {
+      state.showHelpText = !action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -40,6 +43,7 @@ export const changeNameAsync = createAsyncThunk(
   },
 );
 
-export const { changeName, setGameLoading } = gameSlice.actions;
+export const { changeName, setGameLoading, setshowHelpText } =
+  gameSlice.actions;
 
 export default gameSlice.reducer;

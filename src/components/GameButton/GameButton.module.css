@@ -1,0 +1,26 @@
+.gameButton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    margin: 0 auto;
+
+    .iconContainer {
+        border: 3px solid var(--color-text);;
+        color: var(--color-text);
+        border-radius: 100px;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    &:hover {
+        filter: drop-shadow(0px 0px 2px var(--color-blue));
+        cursor: pointer;
+    }
+}
+

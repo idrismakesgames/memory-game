@@ -1,0 +1,18 @@
+.helpText {
+    font-size: 26px;
+
+    .helpLine {
+        margin-bottom: 15px;
+    }
+
+    .helpImagesTop,
+    .helpImagesBottom {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-bottom: 40px;
+    }
+}
+
+
+
