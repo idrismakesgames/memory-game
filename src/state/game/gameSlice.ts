@@ -1,19 +1,19 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { GameState } from "./gameSlice.types.ts";
+import { GamePlayModes, GameState } from "./gameSlice.types.ts";
 
 const initialState: GameState = {
   gameName: "Memory Game",
-  gameLoading: true,
-  showHelpText: true,
+  gamePlayMode: GamePlayModes.gameLoading,
   gameModes: null,
+  difficulty: null,
 };
 
 const gameSlice = createSlice({
   name: "game",
   initialState,
   reducers: {
-    setShowHelpText: (state, action: PayloadAction<boolean>) => {
-      state.showHelpText = action.payload;
+    setGameMode: (state, action: PayloadAction<GamePlayModes>) => {
+      state.gamePlayMode = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -21,16 +21,16 @@ const gameSlice = createSlice({
       console.log("Loading Game");
     });
     builder.addCase(initLoadGame.fulfilled, (state) => {
-      state.gameLoading = false;
+      state.gamePlayMode = GamePlayModes.tutorialShowing;
     });
   },
 });
 
 export const initLoadGame = createAsyncThunk("game/initLoadGame", async () => {
-  await new Promise((resolve) => setTimeout(resolve, 3000));
+  await new Promise((resolve) => setTimeout(resolve, 2000));
   return;
 });
 
-export const { setShowHelpText } = gameSlice.actions;
+export const { setGameMode } = gameSlice.actions;
 
 export default gameSlice.reducer;

@@ -1,18 +1,16 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "./state/store.ts";
-import HelpScreen from "./components/HelpScreen/HelpScreen.tsx";
 import * as gameSliceActions from "./state/game/gameSlice.ts";
 import "./App.css";
 import LoadingIndicator from "./components/LoadingIndicator/LoadingIndicator.tsx";
+import { GamePlayModes } from "./state/game/gameSlice.types.ts";
+import HelpScreen from "./components/HelpScreen/HelpScreen.tsx";
 
 function App() {
   const gameName = useSelector((state: RootState) => state.game.gameName);
-  const isGameLoading = useSelector(
-    (state: RootState) => state.game.gameLoading,
-  );
-  const showHelpText = useSelector(
-    (state: RootState) => state.game.showHelpText,
+  const gamePlayMode = useSelector(
+    (state: RootState) => state.game.gamePlayMode,
   );
   const dispatch = useDispatch<AppDispatch>();
 
@@ -25,14 +23,20 @@ function App() {
 
   return (
     <div className="app alegreya-sans-sc-medium">
-      {!isGameLoading && (
+      <div className="app-header alegreya-sans-sc-bold">{gameName}</div>
+      {gamePlayMode === GamePlayModes.gameLoading && (
+        <LoadingIndicator text={"Loading..."} />
+      )}
+      {gamePlayMode === GamePlayModes.tutorialShowing && <HelpScreen />}
+      {gamePlayMode === GamePlayModes.difficultySelect && (
+        <div>Select Difficulty</div>
+      )}
+      {gamePlayMode === GamePlayModes.showingPatterns && (
         <>
           <div className="app-header alegreya-sans-sc-bold">{gameName}</div>
-          {showHelpText && <HelpScreen />}
-          {!showHelpText && <div className="difficulties">Play game soon</div>}
+          <div className="difficulties">Play game soon</div>
         </>
       )}
-      {isGameLoading && <LoadingIndicator text={"Loading..."} />}
     </div>
   );
 }

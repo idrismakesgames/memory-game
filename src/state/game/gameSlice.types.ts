@@ -1,3 +1,11 @@
+export enum GamePlayModes {
+  gameLoading,
+  tutorialShowing,
+  difficultySelect,
+  showingPatterns,
+  enteringPattern,
+}
+
 export interface GameMode {
   difficultyName: string;
   gridRows: number;
@@ -9,7 +17,7 @@ export interface GameMode {
 
 export interface GameState {
   gameName: string;
-  gameLoading: boolean;
+  gamePlayMode: GamePlayModes;
   gameModes: GameMode[] | null;
-  showHelpText: boolean;
+  difficulty: string | null;
 }
