@@ -22,7 +22,8 @@ export const buildGamePatterns = (
     let isUnique = false;
     while (!isUnique) {
       const randomIndex = Math.floor(
-        Math.random() * gameModes[gameModeIndex].patterns.length,
+        // - 1 as the final pattern in the endpoint is an empty one for use in this app.
+        Math.random() * gameModes[gameModeIndex].patterns.length - 1,
       );
       if (!indexesUsed.includes(randomIndex)) {
         indexesUsed.push(randomIndex);
@@ -33,6 +34,12 @@ export const buildGamePatterns = (
       }
     }
   }
+
+  // Add one extra empty pattern, (Empty pattern is given at the end of the endpoint array.
+  // this will exceed the colours count and let the game logic know it's an empty grid for the user to fill.
+  patternsToUse.push(
+    gameModes[gameModeIndex].patterns[gameModes[gameModeIndex].patterns.length],
+  );
 
   const gamePattern: GamePatterns = {
     timeBetweenPattern: gameModes[gameModeIndex].timeShownInSeconds,

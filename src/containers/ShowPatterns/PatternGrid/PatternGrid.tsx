@@ -1,6 +1,6 @@
 import "./PatternGrid.css";
 import { GamePatterns } from "../../../state/game/gameSlice.types.ts";
-
+// Rendering the grid patterns passed to this method, very important
 import { renderGrid } from "./PatternGridMethods/PatternGridMethods.tsx";
 
 interface PatternGridProps {
