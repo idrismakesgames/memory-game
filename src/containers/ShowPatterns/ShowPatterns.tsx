@@ -8,9 +8,9 @@ function ShowPatterns() {
   const difficultySelected = useSelector(
     (state: RootState) => state.game.difficulty,
   );
-  const gamePatterns = useSelector(
-    (state: RootState) => state.game.gamePatterns,
-  );
+  // const gamePatterns = useSelector(
+  //   (state: RootState) => state.game.gamePatterns,
+  // );
   const dispatch = useDispatch<AppDispatch>();
 
   const [timeLeft, setTimeLeft] = useState(3);
@@ -27,10 +27,10 @@ function ShowPatterns() {
   useEffect(() => {
     dispatch(gameSliceActions.createGamePatterns(difficultySelected)).then(
       () => {
-        console.log(gamePatterns, difficultySelected);
+        console.log(difficultySelected);
       },
     );
-  }, [dispatch, difficultySelected, gamePatterns]);
+  }, [dispatch, difficultySelected]);
 
   const restartGame = (difficulty: string) => {
     dispatch(gameSliceActions.setDifficulty(difficulty));
@@ -63,7 +63,7 @@ function ShowPatterns() {
       {timeLeft > 0 ? (
         <div className={classes.countdownTimer}>{timeLeft} ...</div>
       ) : (
-        <div> pattern</div>
+        <div>hehehehe</div>
       )}
     </div>
   );
