@@ -39,6 +39,8 @@ export const buildGamePatterns = (
     currentPatternShown: 0,
     chosenPatterns: patternsToUse,
     chosenColours: gameModes[gameModeIndex].colours,
+    rowCount: gameModes[gameModeIndex].gridRows,
+    colCount: gameModes[gameModeIndex].gridColumns,
   };
 
   return gamePattern;

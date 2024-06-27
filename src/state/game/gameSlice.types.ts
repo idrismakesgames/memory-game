@@ -28,4 +28,6 @@ export interface GamePatterns {
   currentPatternShown: number;
   chosenPatterns: number[][];
   chosenColours: string[];
+  rowCount: number;
+  colCount: number;
 }

@@ -39,7 +39,6 @@ const gameSlice = createSlice({
     builder.addCase(
       createGamePatterns.fulfilled,
       (state, action: PayloadAction<GamePatterns>) => {
-        console.log("pattern Built", action.payload);
         state.gamePatterns = action.payload;
       },
     );

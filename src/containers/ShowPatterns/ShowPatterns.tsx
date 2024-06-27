@@ -3,14 +3,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../state/store.ts";
 import { useEffect, useState } from "react";
 import * as gameSliceActions from "../../state/game/gameSlice.ts";
+import DifficultyHeader from "../../components/DifficultyHeader/DifficultyHeader.tsx";
+import PatternGrid from "./PatternGrid/PatternGrid.tsx";
 
 function ShowPatterns() {
   const difficultySelected = useSelector(
     (state: RootState) => state.game.difficulty,
   );
-  // const gamePatterns = useSelector(
-  //   (state: RootState) => state.game.gamePatterns,
-  // );
+  const gamePatterns = useSelector(
+    (state: RootState) => state.game.gamePatterns,
+  );
   const dispatch = useDispatch<AppDispatch>();
 
   const [timeLeft, setTimeLeft] = useState(3);
@@ -39,31 +41,15 @@ function ShowPatterns() {
 
   return (
     <div className={classes.showPatternsContainer}>
-      <div className={classes.difficultiesContainer}>
-        <div
-          onClick={() => restartGame("easy")}
-          className={`${classes.difficultyOption} ${difficultySelected === "easy" && classes.isSelected}`}
-        >
-          Easy
-        </div>
-        <div
-          onClick={() => restartGame("medium")}
-          className={`${classes.difficultyOption} ${difficultySelected === "medium" && classes.isSelected}`}
-        >
-          Medium
-        </div>
-        <div
-          onClick={() => restartGame("hard")}
-          className={`${classes.difficultyOption} ${difficultySelected === "hard" && classes.isSelected}`}
-        >
-          Hard
-        </div>
-      </div>
+      <DifficultyHeader
+        restartGame={restartGame}
+        difficultySelected={difficultySelected}
+      />
 
       {timeLeft > 0 ? (
         <div className={classes.countdownTimer}>{timeLeft} ...</div>
       ) : (
-        <div>hehehehe</div>
+        <PatternGrid gamePatterns={gamePatterns} restartGame={restartGame} />
       )}
     </div>
   );
