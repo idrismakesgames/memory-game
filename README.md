@@ -4,6 +4,14 @@ Memory Game (React, Typescript, Next.js, Redux Toolkit)
 ### Figma Link
 [Full Figma Design And Technical Details](https://www.figma.com/design/1ajIDGUNbZ6kH3JgDBj0Fh/Memory-Game?node-id=0-1&t=cwOJGSE2bAdZOWp8-1)
 
+### Details
+- Coded using latest react and typescript design principles
+- Dynamic frontend, using endpoints to provide configuration, and patterns.
+- Usage of local storage to keep track of user streak. (reset when retrying)
+- Three separate difficulties to provide greater accessibility.
+- Authored patterns for each difficulty to make them more memorable and provide a more fun user experience.
+- Illustrates just how flexible and useful React and Typescript can be with a unique use case.
+
 ### Task List
 - ~~Create Vite repo~~
 - ~~Add redux Toolkit and dependencies~~
@@ -13,6 +21,7 @@ Memory Game (React, Typescript, Next.js, Redux Toolkit)
 - ~~Map our data structure of API for game configuration~~
 - Setup Next.js API to store game configuration data 
 - Bring in said data on load of memory game in redux state
+- ~~Create and render selectable difficulty screen~~
 - ~~Implement help screen on first load (store check in localstorage when seen)~~
 - Render medium grid by default
 - Create countdowns based on timing and number of or colours (from config endpoints)
@@ -24,11 +33,3 @@ Memory Game (React, Typescript, Next.js, Redux Toolkit)
 - Test all difficulties and extremely config values
 - Make it response for desktop tablet and mobile
 - Get testing feedback for bugs and usability.
-
-### Details
-- Coded using latest react and typescript design principles
-- Dynamic frontend, using endpoints to provide configuration, and patterns.
-- Usage of local storage to keep track of user streak. (reset when retrying)
-- Three separate difficulties to provide greater accessibility.
-- Authored patterns for each difficulty to make them more memorable and provide a more fun user experience.
-- Illustrates just how flexible and useful React and Typescript can be with a unique use case.
