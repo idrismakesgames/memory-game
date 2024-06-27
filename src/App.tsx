@@ -7,6 +7,7 @@ import LoadingIndicator from "./components/LoadingIndicator/LoadingIndicator.tsx
 import { GamePlayModes } from "./state/game/gameSlice.types.ts";
 import HelpScreen from "./containers/HelpScreen/HelpScreen.tsx";
 import DifficultySelect from "./containers/DifficultySelect/DifficultySelect.tsx";
+import ShowPatterns from "./containers/ShowPatterns/ShowPatterns.tsx";
 
 function App() {
   const gameName = useSelector((state: RootState) => state.game.gameName);
@@ -16,10 +17,7 @@ function App() {
   const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
-    // dispatch load game mode data. and return true when promise completes.
-    dispatch(gameSliceActions.initLoadGame()).then(() => {
-      console.log("is this working?");
-    });
+    dispatch(gameSliceActions.initLoadGame());
   }, [dispatch]);
 
   return (
@@ -30,12 +28,7 @@ function App() {
       )}
       {gamePlayMode === GamePlayModes.tutorialShowing && <HelpScreen />}
       {gamePlayMode === GamePlayModes.difficultySelect && <DifficultySelect />}
-      {gamePlayMode === GamePlayModes.showingPatterns && (
-        <>
-          <div className="app-header alegreya-sans-sc-bold">{gameName}</div>
-          <div className="difficulties">Play game soon</div>
-        </>
-      )}
+      {gamePlayMode === GamePlayModes.showingPatterns && <ShowPatterns />}
     </div>
   );
 }

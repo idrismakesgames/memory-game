@@ -7,7 +7,7 @@ export enum GamePlayModes {
 }
 
 export interface GameMode {
-  difficultyName: string;
+  difficulty: string;
   gridRows: number;
   gridColumns: number;
   colours: string[];
@@ -19,5 +19,13 @@ export interface GameState {
   gameName: string;
   gamePlayMode: GamePlayModes;
   gameModes: GameMode[] | null;
-  difficulty: string | null;
+  difficulty: string;
+  gamePatterns: GamePatterns | null;
+}
+
+export interface GamePatterns {
+  timeBetweenPattern: number;
+  currentPatternShown: number;
+  chosenPatterns: number[][];
+  chosenColours: string[];
 }

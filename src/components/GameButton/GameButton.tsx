@@ -2,8 +2,6 @@ import GameButtonType from "./GameButton.types.ts";
 import classes from "./GameButton.module.css";
 
 function GameButton(props: GameButtonType) {
-  console.log(props.disabled);
-
   return (
     <div
       onClick={props.onClickMethod}

@@ -1,5 +1,5 @@
-import { useDispatch } from "react-redux";
-import { AppDispatch } from "../../state/store.ts";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "../../state/store.ts";
 import EasyUnselected from "../../assets/easyUnselected.svg?react";
 import EasySelected from "../../assets/easySelected.svg?react";
 import MediumUnselected from "../../assets/mediumUnselected.svg?react";
@@ -15,16 +15,17 @@ import { useState } from "react";
 
 function DifficultySelect() {
   const dispatch = useDispatch<AppDispatch>();
+  const difficultySelected = useSelector(
+    (state: RootState) => state.game.difficulty,
+  );
   const [open, setOpen] = useState("");
-  const [difficultySelected, setDifficultySelected] = useState("");
 
   const mouseOut = () => {
     setOpen("");
   };
 
   const selectDifficulty = (difficulty: string) => {
-    setDifficultySelected(difficulty);
-    // Send off to global state
+    dispatch(gameSliceActions.setDifficulty(difficulty));
   };
 
   return (
