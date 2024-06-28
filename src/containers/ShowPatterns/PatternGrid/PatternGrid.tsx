@@ -2,7 +2,7 @@ import "./PatternGrid.css";
 import { GamePatterns } from "../../../state/game/gameSlice.types.ts";
 // Rendering the grid patterns passed to this method, very important
 import { renderGrid } from "./PatternGridMethods/PatternGridMethods.tsx";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 interface PatternGridProps {
   gamePatterns: GamePatterns | null;
@@ -12,21 +12,17 @@ interface PatternGridProps {
 function PatternGrid(props: PatternGridProps) {
   const timePerPattern = props.gamePatterns?.timeBetweenPattern;
   const gamePatterns = props.gamePatterns as GamePatterns; // (Not null)
+  const [patternsLeft, setPatternsLeft] = useState(0);
 
   useEffect(() => {
-    if (gamePatterns.currentPatternShown >= gamePatterns.chosenPatterns.length)
-      return;
+    if (patternsLeft === gamePatterns.chosenColours.length) return;
     const intervalId = setInterval(() => {
-      // Increase the currentPatternShownIndex
+      setPatternsLeft(patternsLeft + 1);
     }, timePerPattern);
     return () => clearInterval(intervalId);
-  }, [
-    gamePatterns.currentPatternShown,
-    gamePatterns.chosenPatterns.length,
-    timePerPattern,
-  ]);
+  }, [patternsLeft, timePerPattern, gamePatterns.chosenColours.length]);
 
-  console.log("Patterns", props.gamePatterns);
+  console.log("Patterns", patternsLeft, props.gamePatterns);
   if (props.gamePatterns !== null)
     return (
       <div className={"patternContainer"}>
@@ -34,10 +30,8 @@ function PatternGrid(props: PatternGridProps) {
           props.gamePatterns.rowCount,
           props.gamePatterns.colCount,
           props.gamePatterns.chosenColours,
-          props.gamePatterns.currentPatternShown,
-          props.gamePatterns.chosenPatterns[
-            props.gamePatterns.currentPatternShown
-          ],
+          patternsLeft,
+          props.gamePatterns.chosenPatterns[patternsLeft],
         )}
       </div>
     );

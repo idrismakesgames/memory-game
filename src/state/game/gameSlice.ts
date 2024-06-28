@@ -24,6 +24,10 @@ const gameSlice = createSlice({
     setGameMode: (state, action: PayloadAction<GamePlayModes>) => {
       state.gamePlayMode = action.payload;
     },
+    setCurrentPatternShown: (state, action: PayloadAction<number>) => {
+      if (state.gamePatterns != null)
+        state.gamePatterns.currentPatternShown = action.payload;
+    },
     setDifficulty: (state, action: PayloadAction<string>) => {
       state.difficulty = action.payload;
     },
@@ -58,6 +62,7 @@ export const createGamePatterns = createAsyncThunk(
   },
 );
 
-export const { setGameMode, setDifficulty } = gameSlice.actions;
+export const { setGameMode, setDifficulty, setCurrentPatternShown } =
+  gameSlice.actions;
 
 export default gameSlice.reducer;

@@ -25,7 +25,6 @@ export interface GameState {
 
 export interface GamePatterns {
   timeBetweenPattern: number;
-  currentPatternShown: number;
   chosenPatterns: number[][];
   chosenColours: string[];
   rowCount: number;

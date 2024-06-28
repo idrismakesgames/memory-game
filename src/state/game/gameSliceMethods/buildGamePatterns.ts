@@ -23,7 +23,7 @@ export const buildGamePatterns = (
     while (!isUnique) {
       const randomIndex = Math.floor(
         // - 1 as the final pattern in the endpoint is an empty one for use in this app.
-        Math.random() * gameModes[gameModeIndex].patterns.length - 1,
+        Math.random() * (gameModes[gameModeIndex].patterns.length - 1),
       );
       if (!indexesUsed.includes(randomIndex)) {
         indexesUsed.push(randomIndex);
@@ -44,8 +44,7 @@ export const buildGamePatterns = (
   );
 
   const gamePattern: GamePatterns = {
-    timeBetweenPattern: gameModes[gameModeIndex].timeShownInSeconds,
-    currentPatternShown: 0,
+    timeBetweenPattern: gameModes[gameModeIndex].timeShownInSeconds * 1000,
     chosenPatterns: patternsToUse,
     chosenColours: gameModes[gameModeIndex].colours,
     rowCount: gameModes[gameModeIndex].gridRows,
