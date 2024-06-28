@@ -1,6 +1,9 @@
 .patternContainer {
     margin: 0 auto;
     width: 500px;
+    @media only screen and (max-width: 700px) {
+        width: 100%;
+    }
 
     .patternRow {
         display: flex;
@@ -16,7 +19,7 @@
         margin-right: 5px;
 
         &:last-of-type {
-            margin-right: 0px;
+            margin-right: 0;
         }
     }
 }

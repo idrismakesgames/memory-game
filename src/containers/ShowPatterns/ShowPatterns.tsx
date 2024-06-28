@@ -22,7 +22,7 @@ function ShowPatterns() {
     if (timeLeft === 0) return;
     const intervalId = setInterval(() => {
       setTimeLeft(timeLeft - 1);
-    }, 1000);
+    }, 700);
     return () => clearInterval(intervalId);
   }, [timeLeft]);
 
@@ -47,7 +47,7 @@ function ShowPatterns() {
       />
 
       {timeLeft > 0 ? (
-        <div className={classes.countdownTimer}>{timeLeft} ...</div>
+        <div className={classes.countdownTimer}>{timeLeft}</div>
       ) : (
         <PatternGrid gamePatterns={gamePatterns} restartGame={restartGame} />
       )}

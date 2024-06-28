@@ -38,7 +38,9 @@ export const buildGamePatterns = (
   // Add one extra empty pattern, (Empty pattern is given at the end of the endpoint array.
   // this will exceed the colours count and let the game logic know it's an empty grid for the user to fill.
   patternsToUse.push(
-    gameModes[gameModeIndex].patterns[gameModes[gameModeIndex].patterns.length],
+    gameModes[gameModeIndex].patterns[
+      gameModes[gameModeIndex].patterns.length - 1
+    ],
   );
 
   const gamePattern: GamePatterns = {
