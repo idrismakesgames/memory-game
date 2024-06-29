@@ -4,7 +4,7 @@ import classes from "./GameButton.module.css";
 const GameButton = (props: GameButtonType) => {
   return (
     <div
-      onClick={props.onClickMethod}
+      onClick={() => (!props.disabled ? props.onClickMethod() : null)}
       className={`${classes.gameButton} ${props.disabled === true && classes.buttonDisabled}`}
     >
       <div className={classes.iconContainer}>

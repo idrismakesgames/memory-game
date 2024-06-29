@@ -7,14 +7,11 @@ import DifficultyHeader from "./DifficultyHeader/DifficultyHeader.tsx";
 import PatternGrid from "./PatternGrid/PatternGrid.tsx";
 
 const ShowPatterns: FC = () => {
-  const difficultySelected = useSelector(
-    (state: RootState) => state.game.difficulty,
-  );
-  const gamePatterns = useSelector(
-    (state: RootState) => state.game.gamePatterns,
+  const [timeLeft, setTimeLeft] = useState(3);
+  const { gamePatterns, difficulty } = useSelector(
+    (state: RootState) => state.game,
   );
   const dispatch = useDispatch<AppDispatch>();
-  const [timeLeft, setTimeLeft] = useState(3);
 
   // Set Countdown Time for game to start
   useEffect(() => {
@@ -27,11 +24,14 @@ const ShowPatterns: FC = () => {
 
   // Use effect to create the game patterns whenever a game is restarted or difficulty is changed.
   useEffect(() => {
-    dispatch(gameSliceActions.createGamePatterns(difficultySelected));
-  }, [dispatch, difficultySelected]);
+    dispatch(gameSliceActions.createGamePatterns(difficulty));
+  }, [dispatch, difficulty]);
 
   const restartGame = (difficulty: string) => {
     dispatch(gameSliceActions.setDifficulty(difficulty));
+    if (difficulty === difficulty) {
+      dispatch(gameSliceActions.createGamePatterns(difficulty));
+    }
     setTimeLeft(3);
   };
 
@@ -39,7 +39,7 @@ const ShowPatterns: FC = () => {
     <div className={classes.showPatternsContainer}>
       <DifficultyHeader
         restartGame={restartGame}
-        difficultySelected={difficultySelected}
+        difficultySelected={difficulty}
       />
 
       {timeLeft > 0 ? (

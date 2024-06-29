@@ -1,7 +1,6 @@
 .patternContainer {
     margin: 40px auto;
     width: 500px;
-    min-height: 300px;
 
     @media only screen and (max-width: 700px) {
         width: 100%;
@@ -11,6 +10,14 @@
         display: flex;
         justify-content: center;
         margin-bottom: 5px;
+    }
+
+    .patternRowWinAnimation {
+        animation: lds-grid 1.2s linear infinite;
+    }
+
+    .patternRowWinAnimation:nth-child(2) {
+        animation-delay: -0.3s;
     }
 
 
@@ -23,5 +30,30 @@
         &:last-of-type {
             margin-right: 0;
         }
+    }
+
+    .patternColWinAnimation {
+        animation: lds-grid 1.2s linear infinite;
+    }
+
+    .patternColWinAnimation:nth-child(2) {
+        animation-delay: -0.5s;
+    }
+
+    @keyframes lds-grid {
+        0%, 100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.2;
+        }
+    }
+
+    .bottomButtons {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 30px auto;
+        max-width: 300px;
     }
 }

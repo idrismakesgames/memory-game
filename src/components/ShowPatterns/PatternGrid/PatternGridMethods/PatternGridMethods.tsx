@@ -13,7 +13,7 @@ const renderColumns = (
     elementRowArray.push(
       <div
         key={`col-${j}`}
-        className={"patternCol"}
+        className={"patternCol pulsate"}
         style={{
           border: `4px solid #${darkColours[currentPatternIndex]}`,
           background: `${currentPattern[j] ? "#" + colours[currentPatternIndex] : "#232758"}`,

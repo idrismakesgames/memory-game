@@ -40,6 +40,7 @@ const gameSlice = createSlice({
       createGamePatterns.fulfilled,
       (state, action: PayloadAction<GamePatterns>) => {
         state.gamePatterns = action.payload;
+        state.gamePlayMode = GamePlayModes.showingPatterns;
       },
     );
   },

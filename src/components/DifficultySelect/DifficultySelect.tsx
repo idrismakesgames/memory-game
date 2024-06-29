@@ -14,11 +14,11 @@ import { GamePlayModes } from "../../state/game/gameSlice.types.ts";
 import { FC, useState } from "react";
 
 const DifficultySelect: FC = () => {
+  const [open, setOpen] = useState("");
   const dispatch = useDispatch<AppDispatch>();
   const difficultySelected = useSelector(
     (state: RootState) => state.game.difficulty,
   );
-  const [open, setOpen] = useState("");
 
   const mouseOut = () => {
     setOpen("");
@@ -26,6 +26,10 @@ const DifficultySelect: FC = () => {
 
   const selectDifficulty = (difficulty: string) => {
     dispatch(gameSliceActions.setDifficulty(difficulty));
+  };
+
+  const buttonPressMethod = () => {
+    dispatch(gameSliceActions.setGameMode(GamePlayModes.showingPatterns));
   };
 
   return (
@@ -70,9 +74,7 @@ const DifficultySelect: FC = () => {
         </div>
       </div>
       <GameButton
-        onClickMethod={() =>
-          dispatch(gameSliceActions.setGameMode(GamePlayModes.showingPatterns))
-        }
+        onClickMethod={buttonPressMethod}
         buttonIcon={PlayIcon}
         buttonText={difficultySelected}
         disabled={!difficultySelected}
