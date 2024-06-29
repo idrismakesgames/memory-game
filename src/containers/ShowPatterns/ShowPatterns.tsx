@@ -27,11 +27,7 @@ function ShowPatterns() {
   }, [timeLeft]);
 
   useEffect(() => {
-    dispatch(gameSliceActions.createGamePatterns(difficultySelected)).then(
-      () => {
-        console.log(difficultySelected);
-      },
-    );
+    dispatch(gameSliceActions.createGamePatterns(difficultySelected));
   }, [dispatch, difficultySelected]);
 
   const restartGame = (difficulty: string) => {

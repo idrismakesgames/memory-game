@@ -28,7 +28,8 @@ function App() {
       )}
       {gamePlayMode === GamePlayModes.tutorialShowing && <HelpScreen />}
       {gamePlayMode === GamePlayModes.difficultySelect && <DifficultySelect />}
-      {gamePlayMode === GamePlayModes.showingPatterns && <ShowPatterns />}
+      {(gamePlayMode === GamePlayModes.showingPatterns ||
+        gamePlayMode === GamePlayModes.enteringPattern) && <ShowPatterns />}
     </div>
   );
 }
