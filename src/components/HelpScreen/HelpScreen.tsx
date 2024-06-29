@@ -9,8 +9,9 @@ import GameButton from "../../components/GameButton/GameButton.tsx";
 import classes from "./HelpScreen.module.css";
 import * as gameSliceActions from "../../state/game/gameSlice.ts";
 import { GamePlayModes } from "../../state/game/gameSlice.types.ts";
+import { FC } from "react";
 
-function HelpScreen() {
+const HelpScreen: FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   return (
     <div className={classes.helpText}>
@@ -38,6 +39,6 @@ function HelpScreen() {
       />
     </div>
   );
-}
+};
 
 export default HelpScreen;

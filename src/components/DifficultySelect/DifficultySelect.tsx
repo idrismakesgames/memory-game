@@ -11,9 +11,9 @@ import GameButton from "../../components/GameButton/GameButton.tsx";
 import classes from "./DifficultySelect.module.css";
 import * as gameSliceActions from "../../state/game/gameSlice.ts";
 import { GamePlayModes } from "../../state/game/gameSlice.types.ts";
-import { useState } from "react";
+import { FC, useState } from "react";
 
-function DifficultySelect() {
+const DifficultySelect: FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const difficultySelected = useSelector(
     (state: RootState) => state.game.difficulty,
@@ -79,6 +79,6 @@ function DifficultySelect() {
       />
     </div>
   );
-}
+};
 
 export default DifficultySelect;

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { FC, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "./state/store.ts";
 import * as gameSliceActions from "./state/game/gameSlice.ts";
@@ -9,7 +9,7 @@ import HelpScreen from "./components/HelpScreen/HelpScreen.tsx";
 import DifficultySelect from "./components/DifficultySelect/DifficultySelect.tsx";
 import ShowPatterns from "./components/ShowPatterns/ShowPatterns.tsx";
 
-function App() {
+const App: FC = () => {
   const gameName = useSelector((state: RootState) => state.game.gameName);
   const gamePlayMode = useSelector(
     (state: RootState) => state.game.gamePlayMode,
@@ -32,6 +32,6 @@ function App() {
         gamePlayMode === GamePlayModes.enteringPattern) && <ShowPatterns />}
     </div>
   );
-}
+};
 
 export default App;

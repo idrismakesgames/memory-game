@@ -1,7 +1,7 @@
 import GameButtonType from "./GameButton.types.ts";
 import classes from "./GameButton.module.css";
 
-function GameButton(props: GameButtonType) {
+const GameButton = (props: GameButtonType) => {
   return (
     <div
       onClick={props.onClickMethod}
@@ -13,6 +13,6 @@ function GameButton(props: GameButtonType) {
       <div className={classes.textContainer}>{props.buttonText}</div>
     </div>
   );
-}
+};
 
 export default GameButton;

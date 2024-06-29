@@ -1,12 +1,12 @@
 import classes from "./ShowPatterns.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../state/store.ts";
-import { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import * as gameSliceActions from "../../state/game/gameSlice.ts";
 import DifficultyHeader from "./DifficultyHeader/DifficultyHeader.tsx";
 import PatternGrid from "./PatternGrid/PatternGrid.tsx";
 
-function ShowPatterns() {
+const ShowPatterns: FC = () => {
   const difficultySelected = useSelector(
     (state: RootState) => state.game.difficulty,
   );
@@ -14,7 +14,6 @@ function ShowPatterns() {
     (state: RootState) => state.game.gamePatterns,
   );
   const dispatch = useDispatch<AppDispatch>();
-
   const [timeLeft, setTimeLeft] = useState(3);
 
   // Set Countdown Time for game to start
@@ -26,6 +25,7 @@ function ShowPatterns() {
     return () => clearInterval(intervalId);
   }, [timeLeft]);
 
+  // Use effect to create the game patterns whenever a game is restarted or difficulty is changed.
   useEffect(() => {
     dispatch(gameSliceActions.createGamePatterns(difficultySelected));
   }, [dispatch, difficultySelected]);
@@ -49,6 +49,6 @@ function ShowPatterns() {
       )}
     </div>
   );
-}
+};
 
 export default ShowPatterns;
