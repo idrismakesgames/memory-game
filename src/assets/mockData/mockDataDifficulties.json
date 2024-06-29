@@ -8,6 +8,11 @@
       "3FE2BA",
       "F8E186"
     ],
+    "darkColours": [
+      "6C4FC7",
+      "26A384",
+      "C6AF54"
+    ],
     "timeShownInSeconds": 1.5,
     "patterns": [
       [
@@ -154,9 +159,15 @@
     "gridColumns": 3,
     "colours": [
       "47C2FF",
-      "A385FF",
-      "3FE2BA",
-      "F8E186"
+      "F1A17E",
+      "F8E186",
+      "A385FF"
+    ],
+    "darkColours": [
+      "2D7FA8",
+      "AA6141",
+      "C6AF54",
+      "6C4FC7"
     ],
     "timeShownInSeconds": 1.5,
     "patterns": [
@@ -464,11 +475,18 @@
     "gridRows": 4,
     "gridColumns": 4,
     "colours": [
-      "47C2FF",
-      "A385FF",
-      "3FE2BA",
       "F8E186",
-      "F1A17E"
+      "A385FF",
+      "47C2FF",
+      "F1A17E",
+      "3FE2BA"
+    ],
+    "darkColours": [
+      "C6AF54",
+      "6C4FC7",
+      "2D7FA8",
+      "AA6141",
+      "26A384"
     ],
     "timeShownInSeconds": 1.5,
     "patterns": [

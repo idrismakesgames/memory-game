@@ -4,6 +4,7 @@ const renderColumns = (
   currentRow: number,
   colCount: number,
   colours: string[],
+  darkColours: string[],
   currentPatternIndex: number,
   currentPattern: number[],
 ) => {
@@ -14,7 +15,7 @@ const renderColumns = (
         key={`col-${j}`}
         className={"patternCol"}
         style={{
-          border: `3px solid #${colours[currentPatternIndex]}`,
+          border: `4px solid #${darkColours[currentPatternIndex]}`,
           background: `${currentPattern[j] ? "#" + colours[currentPatternIndex] : "#232758"}`,
         }}
       />,
@@ -28,6 +29,7 @@ export const renderGrid = (
   rowCount: number,
   colCount: number,
   colours: string[],
+  darkColours: string[],
   currentPatternIndex: number,
   currentPattern: number[],
 ) => {
@@ -39,6 +41,7 @@ export const renderGrid = (
           i,
           colCount,
           colours,
+          darkColours,
           currentPatternIndex,
           currentPattern,
         )}

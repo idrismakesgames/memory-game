@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../state/store.ts";
 import { useEffect, useState } from "react";
 import * as gameSliceActions from "../../state/game/gameSlice.ts";
-import DifficultyHeader from "../../components/DifficultyHeader/DifficultyHeader.tsx";
+import DifficultyHeader from "./DifficultyHeader/DifficultyHeader.tsx";
 import PatternGrid from "./PatternGrid/PatternGrid.tsx";
 
 function ShowPatterns() {

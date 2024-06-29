@@ -47,6 +47,7 @@ export const buildGamePatterns = (
     timeBetweenPattern: gameModes[gameModeIndex].timeShownInSeconds * 1000,
     chosenPatterns: patternsToUse,
     chosenColours: gameModes[gameModeIndex].colours,
+    chosenDarkColours: gameModes[gameModeIndex].darkColours,
     rowCount: gameModes[gameModeIndex].gridRows,
     colCount: gameModes[gameModeIndex].gridColumns,
   };

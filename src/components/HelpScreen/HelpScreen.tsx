@@ -1,14 +1,12 @@
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../state/store.ts";
-import HelpImage1 from "../../assets/help1.svg?react";
-import HelpImage2 from "../../assets/help2.svg?react";
-import HelpImage3 from "../../assets/help3.svg?react";
-import HelpImage4 from "../../assets/help4.svg?react";
-import HelpImage5 from "../../assets/help5.svg?react";
-import OkayIcon from "../../assets/okay.svg?react";
+import HelpImage1 from "../../assets/icons/help1.svg?react";
+import HelpImage2 from "../../assets/icons/help2.svg?react";
+import HelpImage3 from "../../assets/icons/help3.svg?react";
+import HelpImage5 from "../../assets/icons/help5.svg?react";
+import OkayIcon from "../../assets/icons/okay.svg?react";
 import GameButton from "../../components/GameButton/GameButton.tsx";
 import classes from "./HelpScreen.module.css";
-
 import * as gameSliceActions from "../../state/game/gameSlice.ts";
 import { GamePlayModes } from "../../state/game/gameSlice.types.ts";
 
@@ -23,7 +21,6 @@ function HelpScreen() {
         <HelpImage1 />
         <HelpImage2 />
         <HelpImage3 />
-        <HelpImage4 />
       </div>
       <div className={classes.helpLine}>
         2. Fill the grid with the pattern that matches the colour

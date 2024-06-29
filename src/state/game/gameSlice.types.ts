@@ -11,6 +11,7 @@ export interface GameMode {
   gridRows: number;
   gridColumns: number;
   colours: string[];
+  darkColours: string[];
   timeShownInSeconds: number;
   patterns: number[][];
 }
@@ -27,6 +28,7 @@ export interface GamePatterns {
   timeBetweenPattern: number;
   chosenPatterns: number[][];
   chosenColours: string[];
+  chosenDarkColours: string[];
   rowCount: number;
   colCount: number;
 }
