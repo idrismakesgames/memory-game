@@ -48,6 +48,7 @@ const EnterPatternGrid = (props: EnterPatternGridProps) => {
         <PatternsPreview
           gamePatterns={props.gamePatterns}
           patternsLeft={winningPattern?.patternToMatchIndex}
+          entering={true}
         />
       )}
 

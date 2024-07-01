@@ -51,6 +51,7 @@ function ShowPatternGrid(props: ShowPatternGridProps) {
       <PatternsPreview
         gamePatterns={props.gamePatterns}
         patternsLeft={patternsLeft}
+        entering={false}
       />
     </div>
   );
