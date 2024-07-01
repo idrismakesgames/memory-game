@@ -33,10 +33,10 @@ const renderEnterColumns = (
           {...style({
             border: `4px solid #${darkColours[patternToMatchIndex]}`,
             background: `${playerPattern[j] ? "#" + colours[patternToMatchIndex] : "#232758"}`,
-            ":hover": {
-              background: `#${colours[patternToMatchIndex] + "50"}`,
-              cursor: "pointer",
-            },
+            // ":hover": {
+            //   background: `#${colours[patternToMatchIndex]}${playerPattern[j] ? "FF" : "50"}`,
+            //   cursor: "pointer",
+            // },
           })}
         />,
       );
