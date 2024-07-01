@@ -24,8 +24,8 @@ const HelpScreen: FC = () => {
         <HelpImage3 />
       </div>
       <div className={classes.helpLine}>
-        2. One of those colours will then be chosen at random for you to recall
-        and fill in.
+        2. One of those colours will then be chosen at random for you to fill
+        in.
       </div>
       <div className={classes.helpImagesBottom}>
         <HelpImage5 />

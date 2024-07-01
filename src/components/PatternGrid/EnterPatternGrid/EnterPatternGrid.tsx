@@ -59,7 +59,7 @@ const EnterPatternGrid = (props: EnterPatternGridProps) => {
         <GameButton
           onClickMethod={() => props.restartGame(difficulty)}
           buttonIcon={gamePlayMode === GamePlayModes.won ? NextIcon : RetryIcon}
-          buttonText={gamePlayMode === GamePlayModes.won ? "Next" : "Retry"}
+          buttonText={gamePlayMode === GamePlayModes.won ? "Next" : "Restart"}
           buttonSubText={gamePlayMode === GamePlayModes.won ? "" : ""}
           disabled={false}
           height={20}
