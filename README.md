@@ -2,7 +2,7 @@
 Memory Game (React, Typescript, Next.js, Redux Toolkit)
 
 ### Game Link
-[Play the game now](https://re-fill-game-2024.netlify.app/) (Still features ot be added)
+[Play the game now](https://re-fill-game-2024.netlify.app/) (Still features to be added)
 
 ### Figma Link
 [Full Figma Design And Technical Details](https://www.figma.com/design/1ajIDGUNbZ6kH3JgDBj0Fh/Memory-Game?node-id=0-1&t=cwOJGSE2bAdZOWp8-1)
