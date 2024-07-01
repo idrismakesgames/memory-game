@@ -1,12 +1,12 @@
-import classes from "./ShowPatterns.module.css";
+import classes from "./PatternGrid.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../state/store.ts";
 import { FC, useEffect, useState } from "react";
 import * as gameSliceActions from "../../state/game/gameSlice.ts";
 import DifficultyHeader from "./DifficultyHeader/DifficultyHeader.tsx";
-import PatternGrid from "./PatternGrid/PatternGrid.tsx";
+import ShowPatternGrid from "./ShowPatternGrid/ShowPatternGrid.tsx";
 
-const ShowPatterns: FC = () => {
+const PatternGrid: FC = () => {
   const [timeLeft, setTimeLeft] = useState(3);
   const { gamePatterns, difficulty } = useSelector(
     (state: RootState) => state.game,
@@ -45,10 +45,13 @@ const ShowPatterns: FC = () => {
       {timeLeft > 0 ? (
         <div className={classes.countdownTimer}>{timeLeft}</div>
       ) : (
-        <PatternGrid gamePatterns={gamePatterns} restartGame={restartGame} />
+        <ShowPatternGrid
+          gamePatterns={gamePatterns}
+          restartGame={restartGame}
+        />
       )}
     </div>
   );
 };
 
-export default ShowPatterns;
+export default PatternGrid;

@@ -7,7 +7,7 @@ import LoadingIndicator from "./components/LoadingIndicator/LoadingIndicator.tsx
 import { GamePlayModes } from "./state/game/gameSlice.types.ts";
 import HelpScreen from "./components/HelpScreen/HelpScreen.tsx";
 import DifficultySelect from "./components/DifficultySelect/DifficultySelect.tsx";
-import ShowPatterns from "./components/ShowPatterns/ShowPatterns.tsx";
+import PatternGrid from "./components/PatternGrid/PatternGrid.tsx";
 
 const App: FC = () => {
   const gameName = useSelector((state: RootState) => state.game.gameName);
@@ -29,7 +29,7 @@ const App: FC = () => {
       {gamePlayMode === GamePlayModes.tutorialShowing && <HelpScreen />}
       {gamePlayMode === GamePlayModes.difficultySelect && <DifficultySelect />}
       {(gamePlayMode === GamePlayModes.showingPatterns ||
-        gamePlayMode === GamePlayModes.enteringPattern) && <ShowPatterns />}
+        gamePlayMode === GamePlayModes.enteringPattern) && <PatternGrid />}
     </div>
   );
 };

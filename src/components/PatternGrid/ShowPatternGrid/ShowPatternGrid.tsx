@@ -1,9 +1,9 @@
-import "./PatternGrid.css";
+import "./ShowPatternGrid.css";
 import {
   GamePatterns,
   GamePlayModes,
 } from "../../../state/game/gameSlice.types.ts";
-import { renderGrid } from "./PatternGridMethods/PatternGridMethods.tsx";
+import { renderGrid } from "./ShowPatternGridMethods/ShowPatternGridMethods.tsx";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../../state/store.ts";
@@ -16,7 +16,7 @@ interface PatternGridProps {
   restartGame: (difficulty: string) => void;
 }
 
-function PatternGrid(props: PatternGridProps) {
+function ShowPatternGrid(props: PatternGridProps) {
   const { gamePlayMode, difficulty } = useSelector(
     (state: RootState) => state.game,
   );
@@ -66,4 +66,4 @@ function PatternGrid(props: PatternGridProps) {
   );
 }
 
-export default PatternGrid;
+export default ShowPatternGrid;

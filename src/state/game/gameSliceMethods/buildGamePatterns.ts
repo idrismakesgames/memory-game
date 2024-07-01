@@ -1,5 +1,29 @@
 import { GameMode, GamePatterns } from "../gameSlice.types.ts";
 
+// Fisher Yates Shuffle algorithm to randomise the colours on each play through
+function shuffle(arrayToShuffle: string[], arrayDarkToShuffle: string[]) {
+  let counter = arrayToShuffle.length;
+
+  // While there are elements in the array
+  while (counter > 0) {
+    // Pick a random index
+    const index = Math.floor(Math.random() * counter);
+
+    // Decrease counter by 1
+    counter--;
+
+    // And swap the last element with it
+    const temp = arrayToShuffle[counter];
+    arrayToShuffle[counter] = arrayToShuffle[index];
+    arrayToShuffle[index] = temp;
+
+    const tempDark = arrayDarkToShuffle[counter];
+    arrayDarkToShuffle[counter] = arrayDarkToShuffle[index];
+    arrayDarkToShuffle[index] = tempDark;
+  }
+  return [arrayToShuffle, arrayDarkToShuffle];
+}
+
 // Using the game mode array in state, create a game patterns object ot be used for this instance.
 export const buildGamePatterns = (
   difficulty: string,
@@ -43,11 +67,17 @@ export const buildGamePatterns = (
     ],
   );
 
+  const [shuffledChosenColours, shuffledChosenColoursDark]: string[][] =
+    shuffle(
+      JSON.parse(JSON.stringify(gameModes[gameModeIndex].colours)),
+      JSON.parse(JSON.stringify(gameModes[gameModeIndex].darkColours)),
+    );
+
   const gamePattern: GamePatterns = {
     timeBetweenPattern: gameModes[gameModeIndex].timeShownInSeconds * 1000,
     chosenPatterns: patternsToUse,
-    chosenColours: gameModes[gameModeIndex].colours,
-    chosenDarkColours: gameModes[gameModeIndex].darkColours,
+    chosenColours: shuffledChosenColours,
+    chosenDarkColours: shuffledChosenColoursDark,
     rowCount: gameModes[gameModeIndex].gridRows,
     colCount: gameModes[gameModeIndex].gridColumns,
   };
