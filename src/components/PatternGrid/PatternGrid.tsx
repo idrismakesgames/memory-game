@@ -5,10 +5,12 @@ import { FC, useEffect, useState } from "react";
 import * as gameSliceActions from "../../state/game/gameSlice.ts";
 import DifficultyHeader from "./DifficultyHeader/DifficultyHeader.tsx";
 import ShowPatternGrid from "./ShowPatternGrid/ShowPatternGrid.tsx";
+import { GamePlayModes } from "../../state/game/gameSlice.types.ts";
+import EnterPatternGrid from "./EnterPatternGrid/EnterPatternGrid.tsx";
 
 const PatternGrid: FC = () => {
   const [timeLeft, setTimeLeft] = useState(3);
-  const { gamePatterns, difficulty } = useSelector(
+  const { gamePatterns, difficulty, gamePlayMode } = useSelector(
     (state: RootState) => state.game,
   );
   const dispatch = useDispatch<AppDispatch>();
@@ -27,11 +29,9 @@ const PatternGrid: FC = () => {
     dispatch(gameSliceActions.createGamePatterns(difficulty));
   }, [dispatch, difficulty]);
 
-  const restartGame = (difficulty: string) => {
-    dispatch(gameSliceActions.setDifficulty(difficulty));
-    if (difficulty === difficulty) {
-      dispatch(gameSliceActions.createGamePatterns(difficulty));
-    }
+  const restartGame = (difficultyClicked: string) => {
+    dispatch(gameSliceActions.createGamePatterns(difficulty));
+    dispatch(gameSliceActions.setDifficulty(difficultyClicked));
     setTimeLeft(3);
   };
 
@@ -45,10 +45,21 @@ const PatternGrid: FC = () => {
       {timeLeft > 0 ? (
         <div className={classes.countdownTimer}>{timeLeft}</div>
       ) : (
-        <ShowPatternGrid
-          gamePatterns={gamePatterns}
-          restartGame={restartGame}
-        />
+        <>
+          {gamePlayMode === GamePlayModes.showingPatterns && (
+            <ShowPatternGrid
+              gamePatterns={gamePatterns}
+              restartGame={restartGame}
+            />
+          )}
+          {(gamePlayMode === GamePlayModes.enteringPattern ||
+            gamePlayMode === GamePlayModes.won) && (
+            <EnterPatternGrid
+              gamePatterns={gamePatterns}
+              restartGame={restartGame}
+            />
+          )}
+        </>
       )}
     </div>
   );

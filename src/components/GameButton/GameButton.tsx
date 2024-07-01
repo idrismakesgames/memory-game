@@ -11,6 +11,7 @@ const GameButton = (props: GameButtonType) => {
         <props.buttonIcon height={props.height} />
       </div>
       <div className={classes.textContainer}>{props.buttonText}</div>
+      <div className={classes.subTextContainer}>{props.buttonSubText}</div>
     </div>
   );
 };

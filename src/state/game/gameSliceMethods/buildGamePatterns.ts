@@ -1,7 +1,7 @@
 import { GameMode, GamePatterns } from "../gameSlice.types.ts";
 
 // Fisher Yates Shuffle algorithm to randomise the colours on each play through
-function shuffle(arrayToShuffle: string[], arrayDarkToShuffle: string[]) {
+const shuffle = (arrayToShuffle: string[], arrayDarkToShuffle: string[]) => {
   let counter = arrayToShuffle.length;
 
   // While there are elements in the array
@@ -22,7 +22,7 @@ function shuffle(arrayToShuffle: string[], arrayDarkToShuffle: string[]) {
     arrayDarkToShuffle[index] = tempDark;
   }
   return [arrayToShuffle, arrayDarkToShuffle];
-}
+};
 
 // Using the game mode array in state, create a game patterns object ot be used for this instance.
 export const buildGamePatterns = (

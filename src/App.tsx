@@ -10,7 +10,9 @@ import DifficultySelect from "./components/DifficultySelect/DifficultySelect.tsx
 import PatternGrid from "./components/PatternGrid/PatternGrid.tsx";
 
 const App: FC = () => {
-  const gameName = useSelector((state: RootState) => state.game.gameName);
+  const { gameName, gameSubTitle } = useSelector(
+    (state: RootState) => state.game,
+  );
   const gamePlayMode = useSelector(
     (state: RootState) => state.game.gamePlayMode,
   );
@@ -23,13 +25,17 @@ const App: FC = () => {
   return (
     <div className="app alegreya-sans-sc-medium">
       <div className="app-header alegreya-sans-sc-bold">{gameName}</div>
+      <div className="app-sub-header alegreya-sans-sc-regular-italic">
+        ({gameSubTitle})
+      </div>
       {gamePlayMode === GamePlayModes.gameLoading && (
         <LoadingIndicator text={"Loading..."} />
       )}
       {gamePlayMode === GamePlayModes.tutorialShowing && <HelpScreen />}
       {gamePlayMode === GamePlayModes.difficultySelect && <DifficultySelect />}
       {(gamePlayMode === GamePlayModes.showingPatterns ||
-        gamePlayMode === GamePlayModes.enteringPattern) && <PatternGrid />}
+        gamePlayMode === GamePlayModes.enteringPattern ||
+        gamePlayMode === GamePlayModes.won) && <PatternGrid />}
     </div>
   );
 };

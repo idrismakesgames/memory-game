@@ -4,6 +4,7 @@ export enum GamePlayModes {
   difficultySelect,
   showingPatterns,
   enteringPattern,
+  won,
 }
 
 export interface GameMode {
@@ -18,10 +19,12 @@ export interface GameMode {
 
 export interface GameState {
   gameName: string;
+  gameSubTitle: string;
   gamePlayMode: GamePlayModes;
   gameModes: GameMode[] | null;
   difficulty: string;
   gamePatterns: GamePatterns | null;
+  winningPattern: WinningPatternType | null;
 }
 
 export interface GamePatterns {
@@ -31,4 +34,10 @@ export interface GamePatterns {
   chosenDarkColours: string[];
   rowCount: number;
   colCount: number;
+}
+
+export interface WinningPatternType {
+  patternToMatchIndex: number;
+  patternToMatch: number[];
+  playerPattern: number[];
 }

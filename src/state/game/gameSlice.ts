@@ -8,13 +8,16 @@ import {
 import { buildGameModes } from "./gameSliceMethods/buildGameModes.ts";
 import mockDataDifficulties from "../../assets/mockData/mockDataDifficulties.json";
 import { buildGamePatterns } from "./gameSliceMethods/buildGamePatterns.ts";
+import { choosePatternToFill } from "./gameSliceMethods/choosePatternToFill.ts";
 
 const initialState: GameState = {
-  gameName: "Memory Game",
+  gameName: "Re-Fill",
+  gameSubTitle: "A Pattern Memorisation Game",
   gamePlayMode: GamePlayModes.gameLoading,
   gameModes: null,
   difficulty: "",
   gamePatterns: null,
+  winningPattern: null,
 };
 
 const gameSlice = createSlice({
@@ -23,9 +26,25 @@ const gameSlice = createSlice({
   reducers: {
     setGameMode: (state, action: PayloadAction<GamePlayModes>) => {
       state.gamePlayMode = action.payload;
+      if (action.payload === GamePlayModes.enteringPattern) {
+        state.winningPattern = choosePatternToFill(state.gamePatterns);
+      }
     },
     setDifficulty: (state, action: PayloadAction<string>) => {
       state.difficulty = action.payload;
+    },
+    updatePatternBeingFilled(state, action: PayloadAction<number>) {
+      if (state.winningPattern !== null) {
+        state.winningPattern.playerPattern[action.payload] =
+          1 - state.winningPattern.playerPattern[action.payload];
+        if (
+          JSON.stringify(state.winningPattern.patternToMatch) ===
+          JSON.stringify(state.winningPattern.playerPattern)
+        ) {
+          state.gamePlayMode = GamePlayModes.won;
+          console.log("WIN");
+        }
+      }
     },
   },
   extraReducers: (builder) => {
@@ -59,6 +78,7 @@ export const createGamePatterns = createAsyncThunk(
   },
 );
 
-export const { setGameMode, setDifficulty } = gameSlice.actions;
+export const { setGameMode, setDifficulty, updatePatternBeingFilled } =
+  gameSlice.actions;
 
 export default gameSlice.reducer;

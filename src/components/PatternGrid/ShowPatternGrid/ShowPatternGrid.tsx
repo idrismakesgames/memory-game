@@ -5,21 +5,17 @@ import {
 } from "../../../state/game/gameSlice.types.ts";
 import { renderGrid } from "./ShowPatternGridMethods/ShowPatternGridMethods.tsx";
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch, RootState } from "../../../state/store.ts";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../../../state/store.ts";
 import * as gameSliceActions from "../../../state/game/gameSlice.ts";
-import RetryIcon from "../../../assets/icons/retry.svg?react";
-import GameButton from "../../GameButton/GameButton.tsx";
+import PatternsPreview from "../PatternsPreview/PatternsPreview.tsx";
 
-interface PatternGridProps {
+interface ShowPatternGridProps {
   gamePatterns: GamePatterns | null;
   restartGame: (difficulty: string) => void;
 }
 
-function ShowPatternGrid(props: PatternGridProps) {
-  const { gamePlayMode, difficulty } = useSelector(
-    (state: RootState) => state.game,
-  );
+function ShowPatternGrid(props: ShowPatternGridProps) {
   const timePerPattern = props.gamePatterns?.timeBetweenPattern;
   const gamePatterns = props.gamePatterns as GamePatterns; // (Not null)
   const [patternsLeft, setPatternsLeft] = useState(0);
@@ -51,17 +47,11 @@ function ShowPatternGrid(props: PatternGridProps) {
           patternsLeft,
           props.gamePatterns.chosenPatterns[patternsLeft],
         )}
-      {gamePlayMode === GamePlayModes.enteringPattern && (
-        <div className={"bottomButtons"}>
-          <GameButton
-            onClickMethod={() => props.restartGame(difficulty)}
-            buttonIcon={RetryIcon}
-            buttonText={"Retry"}
-            disabled={false}
-            height={20}
-          />
-        </div>
-      )}
+
+      <PatternsPreview
+        gamePatterns={props.gamePatterns}
+        patternsLeft={patternsLeft}
+      />
     </div>
   );
 }

@@ -12,15 +12,6 @@
         margin-bottom: 5px;
     }
 
-    .patternRowWinAnimation {
-        animation: lds-grid 1.2s linear infinite;
-    }
-
-    .patternRowWinAnimation:nth-child(2) {
-        animation-delay: -0.3s;
-    }
-
-
     .patternCol {
         width: 50px;
         height: 50px;
@@ -29,23 +20,6 @@
 
         &:last-of-type {
             margin-right: 0;
-        }
-    }
-
-    .patternColWinAnimation {
-        animation: lds-grid 1.2s linear infinite;
-    }
-
-    .patternColWinAnimation:nth-child(2) {
-        animation-delay: -0.5s;
-    }
-
-    @keyframes lds-grid {
-        0%, 100% {
-            opacity: 1;
-        }
-        50% {
-            opacity: 0.2;
         }
     }
 

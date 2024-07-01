@@ -1,0 +1,64 @@
+.enterPatternContainer {
+    margin: 40px auto;
+    width: 500px;
+
+    @media only screen and (max-width: 700px) {
+        width: 100%;
+    }
+
+    .enterPatternRow {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 5px;
+    }
+
+    .enterPatternCol {
+        width: 50px;
+        height: 50px;
+        border-radius: 20%;
+        margin-right: 5px;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+
+    .bottomButtons {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 30px auto;
+        max-width: 300px;
+    }
+
+    .winMessage {
+        color: var(--color-green);
+        font-size: 25px;
+        margin-top: 17px;
+    }
+
+    .enterPatternRowWinAnimation {
+        animation: lds-grid 1.2s linear infinite;
+    }
+
+    .enterPatternRowWinAnimation:nth-child(2) {
+        animation-delay: -0.3s;
+    }
+
+    .enterPatternColWinAnimation {
+        animation: win-grid 1.2s linear infinite;
+    }
+
+    .enterPatternColWinAnimation:nth-child(2) {
+        animation-delay: -0.5s;
+    }
+
+    @keyframes win-grid {
+        0%, 100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.2;
+        }
+    }
+}

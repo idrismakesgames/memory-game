@@ -44,5 +44,15 @@
         font-size: 22px;
         text-transform: capitalize;
     }
+
+    .subTextContainer {
+        font-weight: 300;
+        color: var(--color-text-dark);
+        font-style: italic;
+        font-size: 14px;
+        text-transform: capitalize;
+        text-wrap: nowrap;
+        margin-top: 2px;
+    }
 }
 
