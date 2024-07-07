@@ -1,13 +1,17 @@
 # Memory Game (React + Typescript + Next.js)
+
 Memory Game (React, Typescript, Next.js, Redux Toolkit)
 
 ### Game Link
-[Play the game now](https://re-fill-game-2024.netlify.app/) (Still features to be added)
+
+[Play the game now](https://refill-game.netlify.app) (Still features to be added)
 
 ### Figma Link
+
 [Full Figma Design And Technical Details](https://www.figma.com/design/1ajIDGUNbZ6kH3JgDBj0Fh/Memory-Game?node-id=0-1&t=cwOJGSE2bAdZOWp8-1)
 
 ### Details
+
 - Coded using latest react and typescript design principles
 - Dynamic frontend, using endpoints to provide configuration, and patterns.
 - Usage of local storage to keep track of user streak. (reset when retrying)
@@ -16,13 +20,14 @@ Memory Game (React, Typescript, Next.js, Redux Toolkit)
 - Illustrates just how flexible and useful React and Typescript can be with a unique use case.
 
 ### Task List
+
 - ~~Create Vite repo~~
 - ~~Add redux Toolkit and dependencies~~
 - ~~Create Base Store~~
 - ~~Install SCSS and Test SCSS modules~~
 - ~~Finish Design of game in Figma~~
 - ~~Map our data structure of API for game configuration~~
-- Setup Next.js API to store game configuration data 
+- Setup Next.js API to store game configuration data
 - Bring in said data on load of memory game in redux state
 - ~~Create and render selectable difficulty screen~~
 - ~~Implement help screen on first load (store check in localstorage when seen)~~
