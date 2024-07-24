@@ -1,58 +1,57 @@
 .gameButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  margin: 0 auto;
+
+  .iconContainer {
+    border: 3px solid var(--color-text);
+    color: var(--color-text);
+    border-radius: 100px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80px;
-    margin: 0 auto;
+    margin-bottom: 10px;
+    width: 50px;
+    height: 50px;
 
-    .iconContainer {
-        border: 3px solid var(--color-text);;
-        color: var(--color-text);
-        border-radius: 100px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 10px;
-        width: 50px;
-        height: 50px;
-
-        svg {
-            height: 32px;
-        }
-
-        @media only screen and (max-width: 700px) {
-            width: 45px;
-            height: 45px;
-
-            svg {
-                height: 28px;
-            }
-        }
+    svg {
+      height: 32px;
     }
 
-    &:hover {
-        filter: drop-shadow(0px 0px 2px var(--color-blue));
-        cursor: pointer;
-    }
+    @media only screen and (max-width: 700px) {
+      width: 45px;
+      height: 45px;
 
-    &.buttonDisabled {
-        opacity: 0.3;
+      svg {
+        height: 28px;
+      }
     }
+  }
 
-    .textContainer {
-        font-size: 22px;
-        text-transform: capitalize;
-    }
+  &:hover {
+    filter: drop-shadow(0px 0px 2px var(--color-text-dark));
+    cursor: pointer;
+  }
 
-    .subTextContainer {
-        font-weight: 300;
-        color: var(--color-text-dark);
-        font-style: italic;
-        font-size: 14px;
-        text-transform: capitalize;
-        text-wrap: nowrap;
-        margin-top: 2px;
-    }
+  &.buttonDisabled {
+    opacity: 0.3;
+  }
+
+  .textContainer {
+    font-size: 22px;
+    text-transform: capitalize;
+  }
+
+  .subTextContainer {
+    font-weight: 300;
+    color: var(--color-text-dark);
+    font-style: italic;
+    font-size: 14px;
+    text-transform: capitalize;
+    text-wrap: nowrap;
+    margin-top: 2px;
+  }
 }
-

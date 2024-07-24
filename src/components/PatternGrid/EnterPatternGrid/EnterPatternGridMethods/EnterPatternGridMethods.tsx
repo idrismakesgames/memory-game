@@ -1,5 +1,5 @@
-import { ReactElement } from "react";
-import { style } from "glamor";
+import { ReactElement } from 'react';
+import { style } from 'glamor';
 
 const renderEnterColumns = (
   currentRow: number,
@@ -9,7 +9,7 @@ const renderEnterColumns = (
   patternToMatchIndex: number,
   playerPattern: number[],
   onClickMethod: (index: number) => void,
-  wonGame: boolean,
+  wonGame: boolean
 ) => {
   const elementRowArray: ReactElement[] = [];
   for (let j = currentRow * colCount; j < colCount * (currentRow + 1); j++) {
@@ -17,28 +17,28 @@ const renderEnterColumns = (
       elementRowArray.push(
         <div
           key={`col-${j}`}
-          className={"enterPatternCol enterPatternColWinAnimation"}
+          className={'enterPatternCol enterPatternColWinAnimation'}
           {...style({
             border: `4px solid #${darkColours[patternToMatchIndex]}`,
-            background: `${playerPattern[j] ? "#" + colours[patternToMatchIndex] : "#232758"}`,
+            background: `${playerPattern[j] ? '#' + colours[patternToMatchIndex] : '#f7f7f7'}`,
           })}
-        />,
+        />
       );
     } else {
       elementRowArray.push(
         <div
           key={`col-${j}`}
-          className={"enterPatternCol"}
+          className={'enterPatternCol'}
           onClick={() => onClickMethod(j)}
           {...style({
             border: `4px solid #${darkColours[patternToMatchIndex]}`,
-            background: `${playerPattern[j] ? "#" + colours[patternToMatchIndex] : "#232758"}`,
+            background: `${playerPattern[j] ? '#' + colours[patternToMatchIndex] : '#f7f7f7'}`,
             // ":hover": {
             //   background: `#${colours[patternToMatchIndex]}${playerPattern[j] ? "FF" : "50"}`,
             //   cursor: "pointer",
             // },
           })}
-        />,
+        />
       );
     }
   }
@@ -54,14 +54,14 @@ export const renderEnterGrid = (
   patternToMatchIndex: number,
   playerPattern: number[],
   onClickMethod: (index: number) => void,
-  wonGame: boolean,
+  wonGame: boolean
 ) => {
   const elementGridArray: ReactElement[] = [];
   for (let i = 0; i < rowCount; i++) {
     elementGridArray.push(
       <div
         key={`row-${i}`}
-        className={`enterPatternRow ${wonGame ? "enterPatternRowWinAnimation" : ""}`}
+        className={`enterPatternRow ${wonGame ? 'enterPatternRowWinAnimation' : ''}`}
       >
         {...renderEnterColumns(
           i,
@@ -71,9 +71,9 @@ export const renderEnterGrid = (
           patternToMatchIndex,
           playerPattern,
           onClickMethod,
-          wonGame,
+          wonGame
         )}
-      </div>,
+      </div>
     );
   }
   return elementGridArray;

@@ -1,35 +1,35 @@
 <svg viewBox="0 0 66 66" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_d_1_24)">
-<rect width="18.6" height="18.6" rx="3" fill="#F1A17E"/>
-<rect x="1" y="1" width="16.6" height="16.6" rx="2" stroke="#F0733D" stroke-width="2"/>
+<rect width="18.6" height="18.6" rx="3" fill="#f0733d"/>
+<rect x="1" y="1" width="16.6" height="16.6" rx="2" stroke="#d86737" stroke-width="2"/>
 </g>
 <g filter="url(#filter1_d_1_24)">
-<rect y="21.7" width="18.6" height="18.6" rx="3" fill="#F1A17E"/>
-<rect x="1" y="22.7" width="16.6" height="16.6" rx="2" stroke="#F0733D" stroke-width="2"/>
+<rect y="21.7" width="18.6" height="18.6" rx="3" fill="#f0733d"/>
+<rect x="1" y="22.7" width="16.6" height="16.6" rx="2" stroke="#d86737" stroke-width="2"/>
 </g>
 <g filter="url(#filter2_d_1_24)">
-<rect y="43.4" width="18.6" height="18.6" rx="3" fill="#F1A17E"/>
-<rect x="1" y="44.4" width="16.6" height="16.6" rx="2" stroke="#F0733D" stroke-width="2"/>
+<rect y="43.4" width="18.6" height="18.6" rx="3" fill="#f0733d"/>
+<rect x="1" y="44.4" width="16.6" height="16.6" rx="2" stroke="#d86737" stroke-width="2"/>
 </g>
 <g filter="url(#filter3_d_1_24)">
-<rect x="22.7" y="1" width="16.6" height="16.6" rx="2" stroke="#F0733D" stroke-width="2" shape-rendering="crispEdges"/>
+<rect x="22.7" y="1" width="16.6" height="16.6" rx="2" stroke="#d86737" stroke-width="2" shape-rendering="crispEdges"/>
 </g>
 <g filter="url(#filter4_d_1_24)">
-<rect x="22.7" y="22.7" width="16.6" height="16.6" rx="2" stroke="#F0733D" stroke-width="2" shape-rendering="crispEdges"/>
+<rect x="22.7" y="22.7" width="16.6" height="16.6" rx="2" stroke="#d86737" stroke-width="2" shape-rendering="crispEdges"/>
 </g>
 <g filter="url(#filter5_d_1_24)">
-<rect x="21.7" y="43.4" width="18.6" height="18.6" rx="3" fill="#F1A17E"/>
-<rect x="22.7" y="44.4" width="16.6" height="16.6" rx="2" stroke="#F0733D" stroke-width="2"/>
+<rect x="21.7" y="43.4" width="18.6" height="18.6" rx="3" fill="#f0733d"/>
+<rect x="22.7" y="44.4" width="16.6" height="16.6" rx="2" stroke="#d86737" stroke-width="2"/>
 </g>
 <g filter="url(#filter6_d_1_24)">
-<rect x="44.4" y="1" width="16.6" height="16.6" rx="2" stroke="#F0733D" stroke-width="2" shape-rendering="crispEdges"/>
+<rect x="44.4" y="1" width="16.6" height="16.6" rx="2" stroke="#d86737" stroke-width="2" shape-rendering="crispEdges"/>
 </g>
 <g filter="url(#filter7_d_1_24)">
-<rect x="44.4" y="22.7" width="16.6" height="16.6" rx="2" stroke="#F0733D" stroke-width="2" shape-rendering="crispEdges"/>
+<rect x="44.4" y="22.7" width="16.6" height="16.6" rx="2" stroke="#d86737" stroke-width="2" shape-rendering="crispEdges"/>
 </g>
 <g filter="url(#filter8_d_1_24)">
-<rect x="43.4" y="43.4" width="18.6" height="18.6" rx="3" fill="#F1A17E"/>
-<rect x="44.4" y="44.4" width="16.6" height="16.6" rx="2" stroke="#F0733D" stroke-width="2"/>
+<rect x="43.4" y="43.4" width="18.6" height="18.6" rx="3" fill="#f0733d"/>
+<rect x="44.4" y="44.4" width="16.6" height="16.6" rx="2" stroke="#d86737" stroke-width="2"/>
 </g>
 <defs>
 <filter id="filter0_d_1_24" x="0" y="0" width="22.6" height="22.6" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">

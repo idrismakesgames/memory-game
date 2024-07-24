@@ -1,5 +1,5 @@
-import { GamePatterns } from "../../../state/game/gameSlice.types.ts";
-import classes from "./PatternsPreview.module.css";
+import { GamePatterns } from '../../../state/game/gameSlice.types.ts';
+import classes from './PatternsPreview.module.css';
 
 interface PatternPreviewProps {
   gamePatterns: GamePatterns | null;
@@ -14,8 +14,8 @@ const PatternsPreview = (props: PatternPreviewProps) => {
           <div
             key={i}
             style={{
-              background: `#${el}${props.patternsLeft !== undefined && props.patternsLeft === i ? "dd" : "00"}`,
-              border: `2px solid #${props.entering ? "C2CDDB50" : props.gamePatterns?.chosenDarkColours[i]}`,
+              background: `#${el}${props.patternsLeft !== undefined && props.patternsLeft === i ? 'dd' : '00'}`,
+              border: `2px solid #${props.entering ? '7d7d7d90' : props.gamePatterns?.chosenDarkColours[i]}`,
             }}
             className={classes.patternPreviewBox}
           ></div>
