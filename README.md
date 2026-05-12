@@ -19,24 +19,27 @@ Memory Game (React, Typescript, Next.js, Redux Toolkit)
 - Authored patterns for each difficulty to make them more memorable and provide a more fun user experience.
 - Illustrates just how flexible and useful React and Typescript can be with a unique use case.
 
-### Task List
+  ## How it works
 
-- ~~Create Vite repo~~
-- ~~Add redux Toolkit and dependencies~~
-- ~~Create Base Store~~
-- ~~Install SCSS and Test SCSS modules~~
-- ~~Finish Design of game in Figma~~
-- ~~Map our data structure of API for game configuration~~
-- Setup Next.js API to store game configuration data
-- Bring in said data on load of memory game in redux state
-- ~~Create and render selectable difficulty screen~~
-- ~~Implement help screen on first load (store check in localstorage when seen)~~
-- ~~Create countdowns based on timing and number of or colours (from config endpoints)~~
-- ~~Set patterns into place for each of those timing and run~~
-- ~~Show empty grid for solution colour~~
-- Add to streak when colours match
-- Reset streak when player hits retry
-- ~~Ensure app is dynamic around API configuration data~~
-- ~~Test all difficulties and extremely config values~~
-- ~~Make it response for desktop tablet and mobile~~
-- ~~Get testing feedback for bugs and usability.~~
+  1. A brief tutorial runs on first load
+  2. You pick a difficulty
+  3. A coloured grid pattern appears for a couple of seconds, then disappears
+  4. You fill in the grid from memory
+  5. If you match it, you win — retry if not
+
+  Three difficulty levels with different grid sizes and timings:
+
+  - Easy — 2×3 grid, 2.5 seconds
+  - Medium — 3×3 grid, 3 seconds
+  - Hard — 4×4 grid, 3.2 seconds
+
+  ## Stack
+
+  React 18 · TypeScript · Redux Toolkit · Vite · Glamor
+
+  ## Running locally
+
+  ```bash
+  yarn
+  yarn dev
+  ```
